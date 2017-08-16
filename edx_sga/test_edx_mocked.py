@@ -186,7 +186,7 @@ class StaffGradedAssignmentMockedTests(unittest.TestCase):
         """
         Tests scores are displayed correctly on student view.
         """
-        path = pkg_resources.resource_filename(__package__, 'test_with_mocking.py')
+        path = pkg_resources.resource_filename(__package__, 'test_edx_mocked.py')
         upload = mock.Mock(file=DummyUpload(path, 'foo.txt'))
         block = self.make_one()
         get_score.return_value = 10
@@ -316,7 +316,7 @@ class StaffGradedAssignmentMockedTests(unittest.TestCase):
         """
         Tests upload and download assignment for non staff.
         """
-        path = pkg_resources.resource_filename(__package__, 'test_with_mocking.py')
+        path = pkg_resources.resource_filename(__package__, 'test_edx_mocked.py')
         expected = open(path, 'rb').read()
         file_name = 'test.txt'
         upload = mock.Mock(file=DummyUpload(path, file_name))
@@ -368,7 +368,7 @@ class StaffGradedAssignmentMockedTests(unittest.TestCase):
         is_course_staff.return_value = True
         _get_sha1.return_value = SHA1
         file_name = 'test.txt'
-        path = pkg_resources.resource_filename(__package__, 'test_with_mocking.py')
+        path = pkg_resources.resource_filename(__package__, 'test_edx_mocked.py')
         expected = open(path, 'rb').read()
         upload = mock.Mock(file=DummyUpload(path, file_name))
         block = self.make_one()
@@ -403,7 +403,7 @@ class StaffGradedAssignmentMockedTests(unittest.TestCase):
         get_module_by_id.return_value = MockedStudentModule()
         is_course_staff.return_value = True
         _get_sha1.return_value = SHA1
-        path = pkg_resources.resource_filename(__package__, 'test_with_mocking.py')
+        path = pkg_resources.resource_filename(__package__, 'test_edx_mocked.py')
         expected = open(path, 'rb').read()
         file_name = 'test.txt'
         upload = mock.Mock(file=DummyUpload(path, file_name))
@@ -438,7 +438,7 @@ class StaffGradedAssignmentMockedTests(unittest.TestCase):
         get_module_by_id.return_value = MockedStudentModule()
         is_course_staff.return_value = True
         _get_sha1.return_value = SHA1
-        path = pkg_resources.resource_filename(__package__, 'test_with_mocking.py')
+        path = pkg_resources.resource_filename(__package__, 'test_edx_mocked.py')
         expected = open(path, 'rb').read()
         upload = mock.Mock(file=DummyUpload(path, 'test.txt'))
         block = self.make_one()
